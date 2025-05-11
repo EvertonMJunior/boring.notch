@@ -65,6 +65,16 @@ class SpotifyController: MediaControllerProtocol {
         executeCommand("set player position to \(time)")
         updatePlaybackInfo()
     }
+
+    func toggleShuffle() {
+        executeCommand("set shuffling to not shuffling")
+        updatePlaybackInfo()
+    }
+    
+    func toggleRepeat() {
+        executeCommand("set repeating to not repeating")
+        updatePlaybackInfo()
+    }
     
     func isActive() -> Bool {
         let runningApps = NSWorkspace.shared.runningApplications
@@ -96,7 +106,7 @@ class SpotifyController: MediaControllerProtocol {
             duration: duration,
             playbackRate: 1,
             isShuffled: isShuffled,
-            isRepeating: isRepeating,
+            repeatMode: isRepeating ? .all : .off,
             lastUpdated: Date()
         )
         
