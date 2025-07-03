@@ -61,6 +61,7 @@
       }
     },
     "Accent color" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -101,6 +102,9 @@
 
     },
     "All-day" : {
+
+    },
+    "Allow Access" : {
 
     },
     "Always hide in fullscreen" : {
@@ -161,6 +165,9 @@
         }
       }
     },
+    "Boring Notch" : {
+
+    },
     "boring.notch" : {
       "localizations" : {
         "en" : {
@@ -194,9 +201,6 @@
           }
         }
       }
-    },
-    "Buy us a coffee" : {
-
     },
     "Calendar" : {
 
@@ -234,6 +238,9 @@
     "Check for Updates…" : {
 
     },
+    "Choose a Music Source" : {
+
+    },
     "Circle" : {
 
     },
@@ -250,7 +257,11 @@
         }
       }
     },
+    "Continue" : {
+
+    },
     "Custom color" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -270,6 +281,9 @@
 
     },
     "Custom vizualizers (Lottie)" : {
+
+    },
+    "Customize in Settings" : {
 
     },
     "Default" : {
@@ -386,6 +400,9 @@
 
     },
     "Extensions" : {
+
+    },
+    "Finish" : {
 
     },
     "General" : {
@@ -607,6 +624,9 @@
     "Non-notch display height" : {
 
     },
+    "Not Now" : {
+
+    },
     "Notch behavior" : {
 
     },
@@ -617,9 +637,6 @@
 
     },
     "OK" : {
-
-    },
-    "Onboarding" : {
 
     },
     "One or more files failed to load" : {
@@ -746,6 +763,9 @@
     "Select Calendars" : {
 
     },
+    "Select the music source you want to use. You can change this later in the app settings." : {
+
+    },
     "selected" : {
 
     },
@@ -865,9 +885,6 @@
     "System features" : {
 
     },
-    "TheBoringNotch" : {
-
-    },
     "Time to Full Charge: %lld min" : {
 
     },
@@ -918,13 +935,19 @@
         }
       }
     },
+    "View on GitHub: th-ch/youtube-music" : {
+
+    },
     "Welcome" : {
 
     },
-    "Welcome window" : {
+    "What's New" : {
 
     },
-    "What's New" : {
+    "You can now enjoy the app. If you want to tweak things further, you can always visit the settings." : {
+
+    },
+    "You're All Set!" : {
 
     },
     "Work:" : {
