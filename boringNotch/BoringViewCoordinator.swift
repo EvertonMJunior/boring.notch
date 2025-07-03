@@ -18,6 +18,7 @@ enum SneakContentType {
     case mic
     case battery
     case download
+    case pomodoro
 }
 
 struct sneakPeek {
@@ -109,7 +110,7 @@ class BoringViewCoordinator: ObservableObject {
     @objc func sneakPeekEvent(_ notification: Notification) {
             let decoder = JSONDecoder()
             if let decodedData = try? decoder.decode(SharedSneakPeek.self, from: notification.userInfo?.first?.value as! Data) {
-                let contentType = decodedData.type == "brightness" ? SneakContentType.brightness : decodedData.type == "volume" ? SneakContentType.volume : decodedData.type == "backlight" ? SneakContentType.backlight : decodedData.type == "mic" ? SneakContentType.mic : SneakContentType.brightness
+                let contentType = decodedData.type == "brightness" ? SneakContentType.brightness : decodedData.type == "volume" ? SneakContentType.volume : decodedData.type == "backlight" ? SneakContentType.backlight : decodedData.type == "mic" ? SneakContentType.mic : decodedData.type == "pomodoro" ? SneakContentType.pomodoro : SneakContentType.brightness
 
                 let value = CGFloat((NumberFormatter().number(from: decodedData.value) ?? 0.0).floatValue)
                 let icon = decodedData.icon

@@ -16,6 +16,7 @@ import SwiftUIIntrospect
 struct ContentView: View {
     @EnvironmentObject var vm: BoringViewModel
     @StateObject var webcamManager: WebcamManager = .init()
+    @StateObject var pomodoroModel = PomodoroModel()
 
     @ObservedObject var coordinator = BoringViewCoordinator.shared
     @ObservedObject var musicManager = MusicManager.shared
@@ -210,6 +211,9 @@ struct ContentView: View {
                       } else if coordinator.sneakPeek.show && Defaults[.inlineHUD] && (coordinator.sneakPeek.type != .music) && (coordinator.sneakPeek.type != .battery) {
                           InlineHUD(type: $coordinator.sneakPeek.type, value: $coordinator.sneakPeek.value, icon: $coordinator.sneakPeek.icon, hoverAnimation: $isHovering, gestureProgress: $gestureProgress)
                               .transition(.opacity)
+                      } else if pomodoroModel.currentState != .idle && vm.notchState == .closed && !vm.hideOnClosed {
+                          PomodoroLiveActivity(pomodoroModel: pomodoroModel)
+                              .environmentObject(vm)
                       } else if (!coordinator.expandingView.show || coordinator.expandingView.type == .music) && vm.notchState == .closed && (musicManager.isPlaying || !musicManager.isPlayerIdle) && coordinator.musicLiveActivityEnabled && !vm.hideOnClosed {
                           MusicLiveActivity()
                       } else if !coordinator.expandingView.show && vm.notchState == .closed && (!musicManager.isPlaying && musicManager.isPlayerIdle) && Defaults[.showNotHumanFace] && !vm.hideOnClosed  {
@@ -261,6 +265,8 @@ struct ContentView: View {
                               NotchHomeView(albumArtNamespace: albumArtNamespace)
                           case .shelf:
                               NotchShelfView()
+                          case .pomodoro:
+                              PomodoroView(pomodoroModel: pomodoroModel)
                       }
                   }
               }
